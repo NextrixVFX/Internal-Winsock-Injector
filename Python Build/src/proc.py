@@ -16,7 +16,7 @@ class ProceessManager:
             input("Press any key to continue")
             exit()
     
-    def waitForProcess(self, function: Thread):
+    def waitForProcess(self, function: Thread) -> None:
         procFound: bool = False
         while procFound == False:
             process: str = self.getProcess(self.proc)
