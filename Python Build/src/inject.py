@@ -26,7 +26,7 @@ class InjectDLL:
         assert dllFile.__contains__(".dll") != False, f"{Fore.RED}Invalid DLL Selected!"
         return str(dllFile)
     
-    def inject(self):
+    def inject(self) -> None:
         dllPath: str = self.loadDLL()
         preloadThread: Thread = Thread(target=self.preload, args=(dllPath,))
         self.ProcessManager.waitForProcess(preloadThread)
