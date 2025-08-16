@@ -11,7 +11,7 @@ class Main:
         self.proc: str = input(f"{Fore.GREEN}Enter Process Name:{Fore.WHITE}\t")
         assert self.proc != '', f"{Fore.RED}Invalid Process Name!"
 
-        if self.proc.__contains__(".exe") == False:
+        if ".exe" not in self.proc:
             self.proc += ".exe"
 
         self.InjectDLL: InjectDLL = InjectDLL(self.proc)
@@ -28,7 +28,7 @@ if not isUserAdmin():
     try:
         runAsAdmin()
     except Exception as e:
-        print(f"Error gaining admin: {e}")
+        print(f"Cannot Elevate Permissions: {e}")
 else:
     main: Main = Main()
     main.start()
