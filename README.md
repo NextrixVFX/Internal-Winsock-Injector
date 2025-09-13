@@ -1,2 +1,3 @@
 # AutodialDLL-Injector
 the certs are detected now...
+update 9/12/25: eac detects sideloading rn
